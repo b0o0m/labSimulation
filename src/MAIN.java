@@ -1,5 +1,5 @@
 public class MAIN {
-    public static void main(){
+    public static void main(String[] args){
         Student std1 = new Student("Ehsan","Edalat","9031066") ;
         Student std2 = new Student("Seyed","Ahamdpanah","9031806") ;
         Student std3 = new Student("Ahmad","Asadi","9031054") ;
