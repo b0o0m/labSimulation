@@ -76,6 +76,10 @@ public class Student {
     public String getLastName() {
         return lastName;
     }
+
+    public void print(){
+        System.out.println(lastName + ", student ID: " + id + ",grade: " + grade);
+    }
 }
 
 
