@@ -54,6 +54,13 @@ public class Lab {
     }
 
     /**
+     * @return currentSize
+     */
+    public int getCurrentSize() {
+        return currentSize;
+    }
+
+    /**
      * @param day for this.day
      */
     public void setDay(String day) {
@@ -79,6 +86,13 @@ public class Lab {
      */
     public void setAvg(int avg) {
         this.avg = avg;
+    }
+
+    /**
+     * @param currentSize for this.currentsize
+     * */
+    public void setCurrentSize(int currentSize) {
+        this.currentSize = currentSize;
     }
 
     /*   Methods   */
