@@ -2,7 +2,7 @@
  * The Student class represents a student in a student administration system
  * this class making student object with detail of student
  *
- * @author Mahmoud Hosseini
+ * @author Mahmoud Hosseinii
  */
 
 public class Student {
