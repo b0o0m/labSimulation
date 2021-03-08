@@ -1,20 +1,22 @@
 /**
  * this class is a simulation of Lab
  * with students and Lab's property
+ *
  * @author Mahmoud Hosseini
- * */
+ */
 public class Lab {
     /*  Fields  */
-    private Student[] students;
+    private int capacity;
+    private Student[] students = new Student[3];
     private int avg;
     private String day;
-    private int capacity;
-    private int currentSize;
+    public int currentSize;
 
     /**
      * define a constructor
+     *
      * @param cap is for this.capacity
-     * @param d is for this.day
+     * @param d   is for this.day
      */
     public Lab(int cap, String d) {
         this.capacity = cap;
@@ -23,6 +25,7 @@ public class Lab {
 
     /**
      * getters and setters
+     *
      * @return students
      */
     public Student[] getStudents() {
@@ -30,7 +33,7 @@ public class Lab {
     }
 
     /**
-    *@return avg
+     * @return avg
      */
     public int getAvg() {
         return avg;
@@ -44,21 +47,21 @@ public class Lab {
     }
 
     /**
-    *@return capacity
+     * @return capacity
      */
     public int getCapacity() {
         return capacity;
     }
 
     /**
-    *@param day for this.day
+     * @param day for this.day
      */
     public void setDay(String day) {
         this.day = day;
     }
 
     /**
-    *@param capacity for this.capacity
+     * @param capacity for this.capacity
      */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
@@ -66,20 +69,41 @@ public class Lab {
 
     /**
      * @param students for this.students
-     * */
+     */
     public void setStudents(Student[] students) {
         this.students = students;
     }
 
-    /*   Methods   */
-    public void calculateAvg() {
-
+    /**
+     * @param avg for this avg
+     */
+    public void setAvg(int avg) {
+        this.avg = avg;
     }
 
+    /*   Methods   */
+    /**
+     * A method for calculating average score with
+     * scores of students
+     */
+    int count = 0 ;
+    public void calculateAvg() {
+        for (Student std : students){
+            avg += std.getGrade();
+            count += 1 ;
+        }
+        avg = avg / count ;
+    }
+
+    /**
+    * A method that put Students object
+     * into an array named students
+     * @param std for students[capacity]
+     * */
     public void enrollStudent(Student std) {
         if (currentSize < capacity) {
             students[currentSize] = std;
-            currentSize++;
+            currentSize += 1 ;
         } else {
             System.out.println("Lab if full!!!");
         }
@@ -87,8 +111,14 @@ public class Lab {
 
     /*print method to just print every property*/
     public void print() {
-        System.out.print("the avg is:" + avg + "\n" + "capacirty is :" + capacity + "\n"
-                + "currentSize is :" + currentSize + "\n");
+        for (Student std : students){
+            System.out.print("Firstname: " + std.getFirstName() + "\n" +
+                     "Lastname: " + std.getLastName() + "\n" +
+                     "ID: " + std.getId() + "\n" +
+                     "Grade: " + std.getGrade() + "\n*******\n");
+        }
+        calculateAvg();
+        System.out.print("Avg: "+ getAvg() + "\n");
     }
 }
 

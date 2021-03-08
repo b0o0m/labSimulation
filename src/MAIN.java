@@ -9,6 +9,9 @@ public class MAIN {
         Student std1 = new Student("Ehsan","Edalat","9031066") ;
         Student std2 = new Student("Seyed","Ahamdpanah","9031806") ;
         Student std3 = new Student("Ahmad","Asadi","9031054") ;
+        std1.setGrade(15);
+        std2.setGrade(18);
+        std3.setGrade(20);
 
         std1.print() ;
         std1.setGrade(15);
@@ -21,5 +24,16 @@ public class MAIN {
         std3.print() ;
         std3.setFirstName("HamidReza");
         std3.print();
+        System.out.println("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*");
+        Lab l1 = new Lab(3 , "12") ;
+        l1.setCurrentSize(0);
+        l1.enrollStudent(std1);
+        l1.enrollStudent(std2);
+        l1.enrollStudent(std3);
+        l1.print();
+
+
+
+
     }
 }
