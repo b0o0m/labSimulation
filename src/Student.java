@@ -1,8 +1,8 @@
-/*The Student clss represents a student in a student administration system
+/**
+ * The Student class represents a student in a student administration system
  * this class making student object with detail of student
  *
  * @author Mahmoud Hosseini
- * @version 0.0
  */
 
 public class Student {
@@ -19,11 +19,13 @@ public class Student {
     // the grade of the student
     private int grade;
 
-    /*A constructor for student with defualt value
+    /**
+     * A constructor for student with default value
      * i did this with THIS keyword, hope you dont mine :(
+     *
      * @param firstName for this.firstName
-     * @param lastname for this.lastname
-     * @param id for this.id
+     * @param lastName  for this.lastname
+     * @param id        for this.id
      */
     public Student(String firstName, String lastName, String id) {
         this.firstName = firstName;
@@ -32,52 +34,66 @@ public class Student {
         this.grade = 0;
     }
 
-    /* setter and getter for private instance var*/
-    /* @param firstname for this.firstname
+    /**
+     * setter and getter for private instance var
+     * @param firstName for this.firstname
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    /* @param lastname for this.lastname
+    /**
+     * @param lastName for this.lastname
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    /* @param grade for this.grade
+    /**
+     * @param grade for this.grade
      */
     public void setGrade(int grade) {
         this.grade = grade;
     }
 
-    /* @param id for this.id
+    /**
+     * @param id for this.id
      */
     public void setId(String id) {
         this.id = id;
     }
 
-    /*@return grade field*/
+
+    /**
+     * @return grade field
+     */
     public int getGrade() {
         return grade;
     }
 
-    /*@return grade field*/
+    /**
+     * @return firtName field
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    /*@return grade field*/
+    /**
+    *@return id field
+    */
     public String getId() {
         return id;
     }
 
-    /*@return grade field*/
+    /**
+    @return lastName field
+    */
     public String getLastName() {
         return lastName;
     }
 
-    public void print(){
+    /* print output */
+    public void print() {
         System.out.println(lastName + ", student ID: " + id + ",grade: " + grade);
     }
 }

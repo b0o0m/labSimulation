@@ -1,3 +1,9 @@
+/** this is the main class which mostly
+call methods and print things
+ @author Mahmoud Hosseini
+ @version 0.0
+ */
+
 public class MAIN {
     public static void main(String[] args){
         Student std1 = new Student("Ehsan","Edalat","9031066") ;
