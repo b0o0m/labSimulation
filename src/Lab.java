@@ -7,6 +7,7 @@
 
 import java.lang.*;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Lab {
     /*  Fields  */
@@ -15,7 +16,8 @@ public class Lab {
     private int avg;
     private String day;
     private int currentSize;
-    ArrayList<Student> waitingList = new ArrayList<Student>();
+    List<Student> waitingList = new CopyOnWriteArrayList<>();
+
     /**
      * define a constructor
      * @param capacity is for this.capacity
@@ -139,27 +141,11 @@ public class Lab {
         for (int i = 0 ; i < capacity ; i++){
             Student wow = students[i] ;
             if (wow.equals(std)){
-                students[i] = null ;
-            }
-        }
-    }
-
-    /**
-     * this method just remove Student from waiting list
-     * @param std for removing it from waiting arraylist*/
-    public void enseraf(Student std) {
-        if (waitingList.contains(std)){
-            waitingList.remove(std) ;
-            moveStd();
-        }
-    }
-    /**
-     * move firstone in waiting list to students array
-     */
-    public void moveStd(){
-        for (int i = 0 ; i < capacity ; i++){
-            if (students[i] == null){
+                System.out.println("this is student array AFTER unrolling");
                 students[i] = waitingList.get(0) ;
+                waitingList.remove(0) ;
+                printStudent();
+
             }
         }
     }

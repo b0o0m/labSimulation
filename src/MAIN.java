@@ -23,7 +23,8 @@ public class MAIN {
         std4.setGrade(15);
         std5.setGrade(19);
         std6.setGrade(3);
-        System.out.println("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*"); ;
+        System.out.println("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*");
+        ;
 
         /*creating lab object*/
         Lab l1 = new Lab(3, "12");
@@ -37,25 +38,19 @@ public class MAIN {
         l1.print();
 
 
-        System.out.println("this is student array BEFOR unrolling.");
+        System.out.println("this is student array BEFORE unrolling.");
         l1.printStudent();
         System.out.println("*/*/*/*/*/*/*/*/*/*/*/*/");
 
-        l1.unrollStudent(std1);
-        System.out.println("this is student array AFTER unrolling");
-        l1.printStudent();
-        System.out.println("*/*/*/*/*/*/*/*/*/*/*/*/");
-
-        System.out.println("this is waiting list BEFORE enseraf");
+        System.out.println("this is our waiting list.");
         l1.printWaitingList();
         System.out.println("*/*/*/*/*/*/*/*/*/*/*/*/");
 
-        l1.enseraf(std4);
-        System.out.println("this is waiting list AFTER enseraf");
+
+        l1.unrollStudent(std2);
+        System.out.println("*/*/*/*/*/*/*/*/*/*/*/*/");
+        System.out.println("this is final waiting list");
         l1.printWaitingList();
-        System.out.println("/*/*/*/*/*/*/*/*/*/*/*/*/*/");
-        System.out.println("this is student array after inseting student");
-        l1.printStudent();
 
     }
 }
