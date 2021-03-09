@@ -5,7 +5,6 @@
  * @author Mahmoud Hosseini
  */
 
-
 import java.lang.*;
 import java.util.*;
 
@@ -17,10 +16,8 @@ public class Lab {
     private String day;
     private int currentSize;
     ArrayList<Student> waitingList = new ArrayList<Student>();
-
     /**
      * define a constructor
-     *
      * @param capacity is for this.capacity
      * @param d        is for this.day
      */
@@ -108,19 +105,18 @@ public class Lab {
      * scores of students
      */
     int count = 0;
-
     public void calculateAvg() {
         for (Student std : students) {
             avg += std.getGrade();
             count += 1;
         }
         avg = avg / count;
+        count = 0 ;
     }
 
     /**
      * A method that put Students object
      * into an array named students
-     *
      * @param std for students[capacity]
      */
     public void enrollStudent(Student std) {
@@ -130,29 +126,61 @@ public class Lab {
         } else {
             System.out.println("Lab if full!!!");
             waitingList.add(std);
-            System.out.println(std + "is in waitinglist now...");
+            System.out.println(std + "Just added to waiting list");
         }
     }
 
+    /**
+     * unrolling Student object from students array...
+    * and set it to null
+     * @param std for finding it in student array
+     */
     public void unrollStudent(Student std) {
-        System.out.printf("unrolling %s" , std);
-        std = null;
-        System.out.println("Done");
-    }
-
-    Student newarr[] = new Student[capacity + 1];
-    public void cancelVahed(Student std) {
-        if (waitingList.contains(std)) {
-            waitingList.remove(std);
-            for (int i = 0; i < capacity + 1; i++)
-                newarr[i] = waitingList.get(0);
-            newarr[capacity] = std;
-
-        } else {
-            System.out.println("You are not in waiting list dude!");
+        for (int i = 0 ; i < capacity ; i++){
+            Student wow = students[i] ;
+            if (wow.equals(std)){
+                students[i] = null ;
+            }
         }
     }
 
+    /**
+     * this method just remove Student from waiting list
+     * @param std for removing it from waiting arraylist*/
+    public void enseraf(Student std) {
+        if (waitingList.contains(std)){
+            waitingList.remove(std) ;
+            moveStd();
+        }
+    }
+    /**
+     * move firstone in waiting list to students array
+     */
+    public void moveStd(){
+        for (int i = 0 ; i < capacity ; i++){
+            if (students[i] == null){
+                students[i] = waitingList.get(0) ;
+            }
+        }
+    }
+
+    /**
+     * A method for printing students array*/
+    public void printStudent(){
+        System.out.println("students are now :");
+        for (Student i : students){
+            System.out.println(i);
+        }
+    }
+
+    /**
+     * A method for printing waitingList
+     */
+    public void printWaitingList(){
+        for (Student i : waitingList){
+            System.out.println(i);
+        }
+    }
 
     /*print method to just print every property*/
     public void print() {
@@ -165,12 +193,7 @@ public class Lab {
         calculateAvg();
         System.out.print("Avg: " + getAvg() + "\n");
     }
-    public void print1(){
-        System.out.println("Waithing list :");
-        for (Student i : newarr){
-            System.out.println(i);
-        }
-    }
+
 }
 
 
